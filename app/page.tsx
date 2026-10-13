@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { ArrowDown, ArrowUp, AudioLines, Check, ChevronDown, Code2, FileText, Globe2, Menu, Mic, Moon, Paperclip, Plus, Search, Settings2, Sparkles, Sun, Trash2, X, Zap } from "lucide-react";
+import { ArrowUp, AudioLines, Check, ChevronDown, Code2, FileText, Globe2, Menu, Mic, Moon, Paperclip, Plus, Search, Settings2, Sparkles, Sun, Trash2, X, Zap } from "lucide-react";
 
 type Message = { role: "user" | "assistant"; content: string };
 type Chat = { id: string; title: string; updatedAt: number; messages: Message[] };
