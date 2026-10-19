@@ -142,7 +142,7 @@ export default function Home() {
       <aside className={"sidebar " + (sidebar ? "open" : "closed")}>
         <div className="brand-row">
           <div className="brand-mark"><Sparkles size={19} strokeWidth={2.2}/></div>
-          <span className="brand-name">nova<span>.</span></span>
+          <span className="brand-name">P.I.X.A.L.<span>.</span></span>
           <button className="icon-btn sidebar-close" onClick={() => setSidebar(false)} aria-label="Close sidebar"><X size={18}/></button>
         </div>
         <button className="new-chat" onClick={startNew}><Plus size={17}/> <span>New conversation</span><span className="shortcut">⌘ K</span></button>
