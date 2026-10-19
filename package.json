@@ -1,5 +1,5 @@
 {
-  "name": "nova-ai",
+  "name": "pixal-ai",
   "version": "1.0.0",
   "private": true,
   "scripts": { "dev": "next dev", "build": "next build", "start": "next start", "lint": "eslint ." },
