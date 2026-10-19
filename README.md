@@ -1,47 +1,25 @@
-# Nova AI ✨
+# P.I.X.A.L. AI
 
-A futuristic, responsive AI workspace built with Next.js, React, TypeScript, and the OpenAI Responses API.
+A responsive AI assistant built with Next.js, React, TypeScript, and the OpenAI API.
 
 ## Features
-
-- Polished dark and light themes
-- Responsive desktop and mobile layout
-- Conversation history saved in the current browser
-- Multiple model choices (Nova Quick, Nova Think, Nova Lite)
-- Coding Studio mode
-- Optional web search through OpenAI's Responses API
-- Text and code file attachments (up to 4 per prompt; text files are read locally)
-- Browser speech-to-text input where supported
-- Read-aloud responses where supported
-- Markdown, tables, and syntax-friendly code blocks
-- Server-side API route so the OpenAI key is never exposed in client code
+- ChatGPT-style landing screen and responsive conversation workspace
+- Multiple model choices, Markdown answers, code blocks, tables, and copy controls
+- Coding Studio mode and optional web search
+- Browser-based conversation history and dark/light appearance
+- Text-file attachments, voice dictation, and read-aloud responses
+- Server-side API route so the OpenAI key is not exposed to the browser
 
 ## Run locally
+1. Install Node.js 20 or later.
+2. Run `npm install`.
+3. Copy `.env.example` to `.env.local` and set `OPENAI_API_KEY` to your own key.
+4. Run `npm run dev` and open `http://localhost:3000`.
 
-1. Install Node.js 20 or newer.
-2. Install dependencies: `npm install`
-3. Copy `.env.example` to `.env.local`
-4. Add a valid OpenAI API key to `OPENAI_API_KEY`
-5. Run `npm run dev`
-6. Open [http://localhost:3000](http://localhost:3000)
+## Deploy
+Deploy as a Next.js project on Vercel. Add `OPENAI_API_KEY` in Project Settings → Environment Variables and redeploy. Never commit a real API key.
 
-## Deploy on Vercel
-
-1. Import `https://github.com/treatwashere/nova-ai` into Vercel.
-2. Keep the framework preset as **Next.js** and the root directory as the repository root.
-3. Add `OPENAI_API_KEY` under **Project → Settings → Environment Variables** for Preview and Production.
-4. Deploy. Later commits to `main` will trigger deployments automatically when Git integration is enabled.
-
-## Important notes
-
-- OpenAI API usage may incur charges; a ChatGPT subscription does not include API credits.
-- Never commit real API keys to GitHub. Keep them in local environment files or Vercel environment variables.
-- Browser history is stored locally on the device and is not synced across devices.
-- Voice input depends on browser speech-recognition support. Read-aloud uses the browser's speech synthesis.
-- File text extraction is enabled for common text/code formats. Other file types are listed but not parsed yet.
-- Web search is optional and requires a model/API configuration that supports the Responses API web search tool.
-- Account sign-in and cloud-synced conversation history are not enabled in this first version; the Supabase variables are placeholders for a future auth integration.
-
-## Stack
-
-Next.js · React · TypeScript · OpenAI Responses API · React Markdown · Lucide
+## Current limitations
+- Chat history is stored in the current browser; cloud sync and user accounts are not configured.
+- Attachments extract text from supported text/code formats; PDFs and images are not yet parsed.
+- Model choices require a valid OpenAI API key and API usage may incur charges.
