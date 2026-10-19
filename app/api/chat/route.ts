@@ -19,7 +19,6 @@ export async function POST(request: Request) {
     const messages = body.messages as IncomingMessage[];
     const webSearch = Boolean(body.webSearch);
     const generateImage = Boolean(body.generateImage);
-    const mode = body.mode === "code" ? "code" : "chat";
 
     if (!Array.isArray(messages) || !messages.length) {
       return NextResponse.json({ error: "Send a message to get started." }, { status: 400 });
@@ -56,7 +55,7 @@ export async function POST(request: Request) {
       });
     }
 
-    const response = await client.responses.create({
+    const response: any = await client.responses.create({
       prompt: {
         id: "pmpt_6ad64e62a094819595bd0f084829af620c5d77df71e015e0",
         version: "1",
@@ -66,7 +65,7 @@ export async function POST(request: Request) {
       ...(tools.length ? { tools: tools as never } : {}),
       include: ["web_search_call.action.sources"],
       store: true,
-    });
+    } as any);
 
     const imageCall = response.output.find(
       (item) => item.type === "image_generation_call" && "result" in item && typeof item.result === "string"
